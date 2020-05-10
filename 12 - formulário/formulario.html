@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Cadastro</legend>
+        <form action="eaehomi.php" method="POST"> <!--post esconde informações-->
+            Nome: <br>
+            <input type="text" name="nome" maxlength="10" placeholder="nomezin"><br> <!-- maslength é pra botar o má de caractéres(isso ai)-->
+            Email: <br>
+            <input type="text" name="email" autocomplete="off" placeholder="seuemail@gmail.com"> <br>
+            <!--autocomplete faz com que jesa permitido ou não apareer emails e placeholder pra colocar nome dentro da caixa de "mensage"-->
+          <!-- < form action="eaemulher.php" method="GET" > -> get joga as informações na url --> 
+            Senha: <br>
+            <input type="password" name="senha" required>  <br> <!-- o required faz com que o esse campo seja obrigatório, também pode deixar desabilitado colocando disable-->
+    
+            Senha: <br>
+            <input type="password" name="senha" required>
+            <input type="submit" name="btn-enviar" value="Enviar">
+        </form> <br>    
+        
+        Nome: <br>
+        <input type="text" name="nome"> <br><br>
+        
+        Time: <br>
+        <!--Checked dá um padrão á escolha, já fica algo selecionado-->
+        <input type="radio" name="time" value="Vasco" checked> Vasco <br>
+        <input type="radio" name="time" value="São Paulo" > São Paulo <br>
+        <input type="radio" name="time" value="Curintian"> Corinthians <br>
+        <!--imput type="radio" faz com que apareça opçoes em circulos e tenha só uma escolha--><br>
+
+        Cores: <br>
+        <input type="checkbox" name="verde" checked> Verde <br>  
+        <input type="checkbox" name="Vermelho"> Vermelho <br>  
+        <input type="checkbox" name="Preto"> Preto <br>  
+        <!--imput type="checkbox" faz com que apareça opçoes em quadradinhos e tenha multipla escolha--><br>
+
+        Quantidade: <br>
+        <input type="number" name="quantidade" min="0" max="100" step="10"> <br>
+        <!--imput type="number" faz com que apareça números onde podemos colocar máximo, mínimo e intervalo por exemplo --><br>  
+      
+        <input type="range" name="quantidade" min="0" max="100"><br><br>
+
+        Cor: <br>
+        <input type="color" name="cor"> <br><br>
+
+        Imagem: <br>
+        <input type="file" name="imagem mas pode ser qualquer extensão"> <br><br>
+
+        <input type="hidden" name="id"> <br><br>
+        
+        URL: <br>
+        <input type="url" name="site"> <br><br>
+        Search: <br>
+        <input type="search" name="pesquisa"><br><br>
+        <!--pesquisa-->
+        Telefone: <br>
+        <input type="tel" name="telefone"><br><br>
+
+        Data: <br>
+        <input type="date" name="data" min="1800-01-01" max="3012-12-30"> <br><br>
+
+        Hora: <br>
+        <input type="time" name="hora"> <br><br>
+
+        Mês e ano: <br>
+        <input type="month" name="ano-mês"> <br><br>
+
+        Semana: <br>
+        <input type="week" name="semana">
+
+        Data e Hora: <br>
+        <input type="datetime-local" name="dia-e-hora"> <br><br>
+
+        Mensagem: <br>
+        <textarea name="Mensagem" rows="5" cols="30" spellcheck="true"></textarea> <br><br>
+        <button type="button">Enviar</button><br><br>
+
+        Escolha seu veículo <br>
+        <select name="veiculo">
+           <optgroup label="carros">
+            <option value="camaro" selected>camaro</option>
+            <option value="Hilux">Hilux</option>
+           </optgroup>
+            <optgroup label="moto">
+                <option value="pop100">pop100</option>
+                <option value="Yamarra">Yamarra</option>
+            </optgroup>
+        </select><br><br>
+        <!--Criar um select com categoria aparentemente-->
+
+        Escolha seu curso <br>
+        <input name="cursos" list="lista-cursos">
+        <datalist id="lista-cursos">
+            <option value="HTL5">
+            <option value="CSS3">
+           <option value="PHP">
+        </datalist> <br><br>
+        <!--opçao-->
+    </fieldset> <br>
+
+   <!-- formulario dentro de form-->
+<form id="form-cadastro" action="cadastro.php" method="post" enctype="application/x-www-form-urlencoded" name="formulario=cadastro">
+    Email: <br>
+    <input type="email" name="email" required>
+    <input type="submit" name="cadastrar" value="Cadastrar">
+    <input type="submit" name="Mandar por email" formaction="email.php" value="Mandar por email">
+<!-- formaction especifica para onde a informação vai, isso no input, no form "action" vai tudo pra mesma pág-->
+<!--como vc percebeu, tudo que tá em form vai configurar oq tá nele assim como "method" 
+    vai post ou get pra tudo as se quiser mudar isso para um input específico é só botar
+    "formmethod" e para não validar formnovalidate. Também podemos adicionar "formtarget"
+    e então escolher entre "_blank" para que abra e outra aba-->
+    </form>
+    <!-- formulario fora de form-->
+    Nome: <br>
+    <input type="text" name="nome" form="form-cadastro">
+
+</body>
+</html>
